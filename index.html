@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>書類一発DX｜AIオートパートナーズ</title>
+<meta name="description" content="AI-OCRで車検証などの書類を読み取り、必要な情報をデータ化。書類作成・入力・転記の手間を減らし、業務効率化を支援する書類一発DX。AIオートパートナーズ。">
+<style>
+:root{
+  --blue:#0758b8;--deep:#053a82;--cyan:#12a9df;--navy:#082b63;
+  --red:#e9232f;--yellow:#ffe43b;--bg:#f5f9ff;--text:#14345d;
+  --shadow:0 16px 40px rgba(3,52,112,.13);--radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans JP","Yu Gothic",sans-serif;color:var(--text);background:white;line-height:1.8}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #dce8f8}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-weight:900;font-size:22px;color:var(--navy);letter-spacing:.02em}
+.logo small{display:block;font-size:11px;color:#52739b;letter-spacing:.05em}
+nav{display:flex;gap:22px;font-weight:700;font-size:14px}
+nav a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:900;box-shadow:0 8px 22px rgba(0,80,180,.18);transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white}
+.btn-red{background:var(--red);color:white}
+.hero{background:linear-gradient(135deg,#eef8ff 0%,#fff 50%,#e8f5ff 100%);padding:70px 0 55px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px}
+.badge{display:inline-block;background:#e7f1ff;color:var(--blue);border:1px solid #b9d7fb;padding:6px 14px;border-radius:999px;font-weight:900;font-size:13px}
+h1{font-size:clamp(38px,5vw,68px);line-height:1.12;margin:18px 0;color:var(--navy);letter-spacing:-.04em}
+h1 em{font-style:normal;color:var(--red)}
+.lead{font-size:20px;font-weight:700;margin:0 0 24px}
+.hero-points{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:28px 0}
+.point{background:white;border:1px solid #d7e6f7;border-radius:15px;padding:13px;text-align:center;font-weight:900}
+.point b{display:block;color:var(--blue);font-size:23px}
+.hero-card{background:white;border-radius:28px;box-shadow:var(--shadow);padding:14px;transform:rotate(1deg)}
+.hero-card img{width:100%;display:block;border-radius:18px}
+.note{font-size:12px;color:#607b9b;margin-top:10px}
+.section{padding:82px 0}
+.section.alt{background:var(--bg)}
+.section-head{text-align:center;margin-bottom:44px}
+.kicker{color:var(--blue);font-weight:900;letter-spacing:.12em;font-size:13px}
+h2{font-size:clamp(29px,4vw,44px);line-height:1.25;margin:8px 0 12px;color:var(--navy)}
+.section-head p{margin:0 auto;max-width:760px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;border:1px solid #dce8f6;border-radius:var(--radius);padding:28px;box-shadow:0 8px 25px rgba(8,55,115,.06)}
+.icon{width:50px;height:50px;border-radius:14px;background:#e8f4ff;color:var(--blue);display:grid;place-items:center;font-size:24px;font-weight:900}
+.card h3{margin:14px 0 8px;font-size:21px;color:var(--navy)}
+.problem{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.panel{border-radius:var(--radius);padding:30px}
+.panel.before{background:#f3f4f6;border:1px solid #d5d9df}
+.panel.after{background:linear-gradient(145deg,#edf8ff,#fff);border:2px solid #54b6e8}
+.panel h3{font-size:24px;margin:0 0 16px}
+.panel ul{margin:0;padding-left:1.2em}
+.panel li{margin:8px 0}
+.highlight{margin-top:22px;background:linear-gradient(135deg,#ff303b,#d91622);color:white;border-radius:18px;padding:18px 20px;font-weight:900}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.step{position:relative;background:white;border:1px solid #cfe1f4;border-radius:18px;padding:24px 18px;text-align:center}
+.step-num{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--blue);color:#fff;font-size:20px;font-weight:900}
+.step h3{margin:12px 0 4px;color:var(--navy)}
+.arrow{position:absolute;right:-16px;top:50%;transform:translateY(-50%);font-size:26px;color:var(--cyan);z-index:2}
+.targets{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.target{display:grid;grid-template-columns:1fr 1fr;background:white;border-radius:18px;overflow:hidden;border:1px solid #d8e7f7}
+.target img{width:100%;height:100%;object-fit:cover;min-height:170px}
+.target div{padding:22px}
+.target h3{margin:0 0 8px;color:var(--navy)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.stat{background:linear-gradient(135deg,#fff,#eef8ff);border:1px solid #cce2f7;border-radius:18px;padding:24px;text-align:center}
+.stat strong{font-size:38px;color:var(--red);line-height:1}
+.stat span{display:block;font-weight:800;margin-top:8px}
+.cta{background:linear-gradient(135deg,var(--navy),var(--blue));color:white;padding:76px 0}
+.cta h2{color:white}
+.cta-box{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.cta p{margin:0;opacity:.9}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.contact-card{background:white;border:1px solid #d7e5f5;border-radius:20px;padding:28px}
+.phone{font-size:32px;font-weight:900;color:var(--blue);letter-spacing:.02em}
+.faq details{background:white;border:1px solid #dbe7f5;border-radius:14px;padding:17px 20px;margin:10px 0}
+.faq summary{cursor:pointer;font-weight:900;color:var(--navy)}
+.faq p{margin:12px 0 0}
+.materials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.materials img{width:100%;display:block;border-radius:16px;border:1px solid #d6e4f4;box-shadow:0 8px 20px rgba(0,40,100,.08)}
+footer{background:#061e45;color:#cbd9eb;padding:30px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.small{font-size:12px}
+@media(max-width:850px){
+ nav{display:none}.hero-grid,.problem,.contact{grid-template-columns:1fr}
+ .cards,.flow,.materials,.stats{grid-template-columns:1fr 1fr}
+ .targets{grid-template-columns:1fr}
+ .hero{padding-top:42px}.hero-card{transform:none}
+ .arrow{display:none}.cta-box{display:block}.cta-box .btn{margin-top:22px}
+}
+@media(max-width:560px){
+ .cards,.flow,.materials,.stats,.hero-points{grid-template-columns:1fr}
+ .section{padding:58px 0}.phone{font-size:25px}
+ h1{font-size:40px}.nav{height:64px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#top">AIオートパートナーズ<small>クルマに関わるすべてのパートナーに。</small></a>
+    <nav>
+      <a href="#service">サービス</a><a href="#flow">仕組み</a><a href="#target">対象業種</a><a href="#faq">FAQ</a><a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="btn btn-primary" href="#contact">導入相談</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <span class="badge">書類一発DX 正規代理店</span>
+   <h1>紙の書類、<br><em>見ながら入力</em>を<br>終わらせませんか？</h1>
+   <p class="lead">AI・OCRで書類を読み取り、必要な情報をデータ化。<br>書類作成・入力・転記の手間を減らし、本来の仕事に集中できる環境へ。</p>
+   <div class="hero-points">
+    <div class="point"><b>撮影</b>スマホで</div>
+    <div class="point"><b>OCR</b>自動読取</div>
+    <div class="point"><b>PDF</b>自動出力</div>
+   </div>
+   <a class="btn btn-red" href="#contact">まずは導入相談する →</a>
+   <p class="note">※掲載の削減時間・効果は目安です。実際の業務内容・書類・運用環境により異なります。</p>
+  </div>
+  <div class="hero-card"><img src="flyer-01.jpg" alt="書類一発DXのサービス案内"></div>
+ </div>
+</section>
+
+<section class="section" id="service">
+ <div class="container">
+  <div class="section-head"><div class="kicker">SERVICE</div><h2>書類一発DXって、何ができるの？</h2><p>紙の書類に書かれた情報をAI-OCRで読み取り、必要なデータを活用して書類作成までの流れを効率化します。</p></div>
+  <div class="problem">
+   <div class="panel before"><h3>今までの書類作成</h3><p>「見ながら入力」「入力して、また入力」</p><ul><li>車台番号・型式・車種</li><li>所有者・使用者情報</li><li>登録番号・住所</li><li>その他必要項目</li></ul><div class="highlight">同じ情報を何度も入力する作業を減らします。</div></div>
+   <div class="panel after"><h3>書類一発DXなら</h3><p>「一度読み取った情報を活用」</p><ul><li>スマホで書類を撮影</li><li>OCRで情報を自動読み取り</li><li>必要な情報をもとに書類を作成</li><li>PDFとして出力</li></ul><div class="highlight">人が入力する作業を減らし、業務時間を生み出します。</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section alt" id="flow">
+ <div class="container">
+  <div class="section-head"><div class="kicker">FLOW</div><h2>カンタン4ステップ</h2><p>現場で使いやすいシンプルな流れで、書類作成業務を効率化します。</p></div>
+  <div class="flow">
+   <div class="step"><span class="step-num">1</span><h3>スマホで撮影</h3><p>車検証などの書類をスマホで撮影。</p><span class="arrow">›</span></div>
+   <div class="step"><span class="step-num">2</span><h3>OCRで自動読取り</h3><p>書類に記載された必要な情報を読み取り。</p><span class="arrow">›</span></div>
+   <div class="step"><span class="step-num">3</span><h3>必要な情報を活用</h3><p>読み取った情報をもとに書類を作成。</p><span class="arrow">›</span></div>
+   <div class="step"><span class="step-num">4</span><h3>PDFで出力</h3><p>必要な書類をPDFとして出力。</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="section-head"><div class="kicker">BENEFITS</div><h2>書類一発DXで、仕事の時間を取り戻す</h2></div>
+  <div class="cards">
+   <div class="card"><div class="icon">◷</div><h3>時間の効率化</h3><p>書類を見ながら一項目ずつ入力・転記する時間を減らします。</p></div>
+   <div class="card"><div class="icon">✓</div><h3>入力作業の削減</h3><p>一度読み取った情報を活用し、同じ情報を何度も入力する作業を抑えます。</p></div>
+   <div class="card"><div class="icon">◎</div><h3>確認・転記ミスの低減</h3><p>人による転記作業を減らし、確認しやすい業務フローを目指します。</p></div>
+  </div>
+  <div class="stats">
+   <div class="stat"><strong>40分→約2〜3分</strong><span>書類作成時間の目安（掲載資料より）</span></div>
+   <div class="stat"><strong>約90〜95%</strong><span>作業時間削減の目安（掲載資料より）</span></div>
+   <div class="stat"><strong>4 STEP</strong><span>撮影 → OCR → 作成 → PDF</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section alt" id="target">
+ <div class="container">
+  <div class="section-head"><div class="kicker">FOR BUSINESS</div><h2>こんな事業者様におすすめ</h2><p>自動車関連の「書類を見る・入力する・転記する」業務が多い事業者様へ。</p></div>
+  <div class="targets">
+   <div class="target"><img src="flyer-03.jpg" alt="自動車販売店のイメージ"><div><h3>自動車販売店様</h3><p>販売・登録に関する事務作業の効率化を支援。</p></div></div>
+   <div class="target"><img src="flyer-03.jpg" alt="整備工場のイメージ"><div><h3>整備工場様</h3><p>車検・整備関連の事務作業を効率化。</p></div></div>
+   <div class="target"><img src="flyer-03.jpg" alt="中古車販売店のイメージ"><div><h3>中古車販売店様</h3><p>車両入庫から各種手続きまでの事務負担を軽減。</p></div></div>
+   <div class="target"><img src="flyer-03.jpg" alt="車関連書類を扱う事業者のイメージ"><div><h3>車関連の書類を多く扱う事業者様</h3><p>日々発生する入力・転記作業の効率化を支援。</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="section-head"><div class="kicker">WORKFLOW</div><h2>「人が入力する作業」を減らす</h2><p>従来の「見る→入力→転記→確認→保存」を、AI・OCRを活用した流れへ。</p></div>
+  <div class="problem">
+   <div class="panel before"><h3>Before｜従来</h3><ul><li>書類を見る</li><li>パソコンへ入力</li><li>別の書類へ転記</li><li>入力内容を確認</li><li>印刷・保存</li><li>また別の書類を作成</li></ul></div>
+   <div class="panel after"><h3>After｜書類一発DX</h3><ul><li>スマホで撮影</li><li>OCR読み取り</li><li>書類を自動作成</li><li>PDF出力</li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section class="section alt">
+ <div class="container">
+  <div class="section-head"><div class="kicker">MATERIALS</div><h2>対応書類・サービス資料</h2><p>車検証、OCR登録情報、自動車重量税申告書、自動車保険関係書類など、対応範囲は業務内容に合わせてご相談ください。</p></div>
+  <div class="materials">
+   <img src="flyer-01.jpg" alt="サービス紹介資料">
+   <img src="flyer-02.jpg" alt="書類一発DXの詳細資料">
+   <img src="flyer-03.jpg" alt="導入効果と対象事業者の資料">
+  </div>
+ </div>
+</section>
+
+<section class="section" id="faq">
+ <div class="container">
+  <div class="section-head"><div class="kicker">FAQ</div><h2>よくあるご質問</h2></div>
+  <div class="faq">
+   <details><summary>どんな書類に対応できますか？</summary><p>掲載資料では車検証、OCR登録情報、自動車重量税申告書、自動車保険関係書類、手数料納付書、所有権関連書類、各種申請書類などが紹介されています。実際の対応可否は書類・運用内容によって異なるため、事前にご相談ください。</p></details>
+   <details><summary>パソコンが苦手でも使えますか？</summary><p>スマホで撮影する工程から始められる、シンプルな4ステップを想定しています。実際の操作や導入方法は、お客様の業務に合わせてご案内します。</p></details>
+   <details><summary>どのくらい時間を短縮できますか？</summary><p>掲載資料では「約40分→約2〜3分」「約90〜95%削減」が目安として示されています。ただし、実際の削減時間は業務内容・書類・入力項目・運用方法などによって変わります。</p></details>
+   <details><summary>導入前に相談できますか？</summary><p>はい。現在の書類作成の流れや、1日の処理件数などを伺い、どこを効率化できるか一緒に確認する形がおすすめです。</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="cta" id="contact">
+ <div class="container cta-box">
+  <div><div class="kicker" style="color:#8edcff">CONTACT</div><h2>まずは、今の作業を教えてください。</h2><p>「どこを効率化できるのか」を一緒に確認します。お気軽にご相談ください。</p></div>
+  <div>
+   <a class="btn btn-red" href="tel:0928647755">TEL 092-864-7755</a>
+   <p style="margin-top:10px;font-size:13px">担当：井手　｜　受付：平日 9:00〜18:00</p>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-inner">
+  <div><strong>AIオートパートナーズ</strong><div class="small">クルマに関わるすべてのパートナーに。</div></div>
+  <div class="small">© AI Auto Partners. All Rights Reserved.</div>
+ </div>
+</footer>
+</body>
+</html>
