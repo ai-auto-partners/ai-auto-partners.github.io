@@ -94,9 +94,22 @@ footer{background:#061e45;color:#cbd9eb;padding:30px 0}
 }
 @media(max-width:560px){
  .cards,.flow,.materials,.stats,.hero-points{grid-template-columns:1fr}
- .section{padding:58px 0}.phone{font-size:25px}
+ .section{padding:58px 0 78px}.phone{font-size:25px}
  h1{font-size:40px}.nav{height:64px}
+ body{padding-bottom:74px}
+ .mobile-line-cta{display:flex}
 }
+.mobile-line-cta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;align-items:center;justify-content:center;gap:8px;padding:15px 18px;border-radius:999px;background:#06c755;color:#fff;text-decoration:none;font-weight:900;font-size:17px;box-shadow:0 10px 28px rgba(0,0,0,.22)}
+.mobile-line-cta span{font-size:21px}
+.contact-line{background:#f4fff8;border:2px solid #b9efcf;border-radius:18px;padding:18px 20px;margin-top:18px}
+.contact-line strong{display:block;color:#078a3f;font-size:18px;margin-bottom:5px}
+.contact-line p{color:#31564a;font-size:14px;margin:0}
+.contact-topics{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.contact-topics span{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:800}
+.contact-actions{min-width:min(420px,100%)}
+.btn-line{background:#06c755;color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.16);width:100%}
+.contact-hours{margin-top:10px!important;font-size:13px!important;opacity:.82}
+@media(max-width:850px){.contact-actions{min-width:0;margin-top:26px}}
 </style>
 </head>
 <body>
@@ -106,7 +119,7 @@ footer{background:#061e45;color:#cbd9eb;padding:30px 0}
     <nav>
       <a href="#service">サービス</a><a href="#flow">仕組み</a><a href="#target">対象業種</a><a href="#faq">FAQ</a><a href="#contact">お問い合わせ</a>
     </nav>
-    <a class="btn btn-primary" href="#contact">導入相談</a>
+    <a class="btn btn-primary" href="https://lin.ee/WVr2K2S" target="_blank" rel="noopener">LINE相談</a>
   </div>
 </header>
 
@@ -115,14 +128,14 @@ footer{background:#061e45;color:#cbd9eb;padding:30px 0}
  <div class="container hero-grid">
   <div>
    <span class="badge">書類一発DX 正規代理店</span>
-   <h1>その手作業、確認、<br><em>スマホ撮影データ化</em><br>しませんか？</h1>
-   <p class="lead">書類を読み取り、必要な情報をAIでデータ化<br>書類作成・入力・転記の手間を減らし、本来の仕事に集中できる環境へ</p>
+   <h1>紙の書類、<br><em>見ながら入力</em>を<br>終わらせませんか？</h1>
+   <p class="lead">AI・OCRで書類を読み取り、必要な情報をデータ化。<br>書類作成・入力・転記の手間を減らし、本来の仕事に集中できる環境へ。</p>
    <div class="hero-points">
     <div class="point"><b>撮影</b>スマホで</div>
-<div class="point"><b>AIシステム</b>自動でデータ化</div>
-<div class="point"><b>PDF</b>自動出力</div>
+    <div class="point"><b>OCR</b>自動読取</div>
+    <div class="point"><b>PDF</b>自動出力</div>
    </div>
-   <a class="btn btn-red" href="#contact">導入相談する →</a>
+   <a class="btn btn-red" href="https://lin.ee/WVr2K2S" target="_blank" rel="noopener">LINEで無料相談する →</a>
    <p class="note">※掲載の削減時間・効果は目安です。実際の業務内容・書類・運用環境により異なります。</p>
   </div>
   <div class="hero-card"><img src="flyer-01.jpg" alt="書類一発DXのサービス案内"></div>
@@ -143,10 +156,10 @@ footer{background:#061e45;color:#cbd9eb;padding:30px 0}
  <div class="container">
   <div class="section-head"><div class="kicker">FLOW</div><h2>カンタン4ステップ</h2><p>現場で使いやすいシンプルな流れで、書類作成業務を効率化します。</p></div>
   <div class="flow">
-   <div class="step"><span class="step-num">1</span><h3>スマホで撮影</h3><p>車検証などの書類をスマホで撮影</p><span class="arrow">›</span></div>
-   <div class="step"><span class="step-num">2</span><h3>OCRで自動読取り</h3><p>記載された必要な情報をAIシステムが自動で読み取り</p><span class="arrow">›</span></div>
-   <div class="step"><span class="step-num">3</span><h3>必要な情報を活用</h3><p>読み取った情報を自動作成</p><span class="arrow">›</span></div>
-   <div class="step"><span class="step-num">4</span><h3>PDFで出力</h3><p>必要な書類を保存・出力</p></div>
+   <div class="step"><span class="step-num">1</span><h3>スマホで撮影</h3><p>車検証などの書類をスマホで撮影。</p><span class="arrow">›</span></div>
+   <div class="step"><span class="step-num">2</span><h3>OCRで自動読取り</h3><p>書類に記載された必要な情報を読み取り。</p><span class="arrow">›</span></div>
+   <div class="step"><span class="step-num">3</span><h3>必要な情報を活用</h3><p>読み取った情報をもとに書類を作成。</p><span class="arrow">›</span></div>
+   <div class="step"><span class="step-num">4</span><h3>PDFで出力</h3><p>必要な書類をPDFとして出力。</p></div>
   </div>
  </div>
 </section>
@@ -204,52 +217,29 @@ footer{background:#061e45;color:#cbd9eb;padding:30px 0}
  <div class="container">
   <div class="section-head"><div class="kicker">FAQ</div><h2>よくあるご質問</h2></div>
   <div class="faq">
-  <details><summary>スマホの写真撮影だけで、本当に文字を正確に読み取れますか？</summary><p>最新の高性能AI-OCRエンジンを採用しており、手書きの書類や傾いた写真でも文字を自動認識します。読み取った内容は画面上で確認・微調整ができるため、内容を確認してから次の手続きへ進められます。さらに、抽出したデータは事前にタイプ別に自動分類し、正確性も検証します。</p></details>
-    <details><summary>どんな書類に対応できますか？</summary><p>
-譲渡証明書<br>
-委任状<br>
-OCR第1号様式(移転登録/変更登録)<br>
-手数料納付書(移転登録/変更登録用)<br>
-自動車保管場所証明申請書<br>
-所在図(保管場所証明の添付書類)<br>
-継続検査申請書(専用第3号様式)<br>
-自動車検査票1(様式9・A4横)<br>
-自動車検査票2(様式2・A4横)<br>
-自動車重量税納付書(検査自動車)　<br>
-抹消登録申請書(一時抹消・第3号様式の2)<br>
-
-実際の対応可否は書類・運用内容によって異なるため、事前にご相談ください </p></details>
-   <details><summary>パソコンが苦手でも使えますか？</summary><p>ご安心ください。<br> 
-
-スマホで撮影する工程から始められる、シンプルな4ステップを想定しています。<br>
-
-スマホで書類を撮影するステップから始まる、非常にシンプルな操作画面を設計しています。<br>
-
-複雑な入力作業は不要ですので、導入当日から直感的にご利用いただけます</p></details>
-   <details><summary>セットで複数の書類を同時に作れますか？</summary><p>1回の車両・顧客情報の取り込みで、譲渡証明書、委任状、OCR第1号様式、車庫証明、所在図などを一括でまとめて作成・出力することが可能です</p></details>
+   <details><summary>どんな書類に対応できますか？</summary><p>掲載資料では車検証、OCR登録情報、自動車重量税申告書、自動車保険関係書類、手数料納付書、所有権関連書類、各種申請書類などが紹介されています。実際の対応可否は書類・運用内容によって異なるため、事前にご相談ください。</p></details>
+   <details><summary>パソコンが苦手でも使えますか？</summary><p>スマホで撮影する工程から始められる、シンプルな4ステップを想定しています。実際の操作や導入方法は、お客様の業務に合わせてご案内します。</p></details>
+   <details><summary>どのくらい時間を短縮できますか？</summary><p>掲載資料では「約40分→約2〜3分」「約90〜95%削減」が目安として示されています。ただし、実際の削減時間は業務内容・書類・入力項目・運用方法などによって変わります。</p></details>
    <details><summary>導入前に相談できますか？</summary><p>はい。現在の書類作成の流れや、1日の処理件数などを伺い、どこを効率化できるか一緒に確認する形がおすすめです。</p></details>
-<details>
- <summary>導入するとどれくらい業務が効率化されますか？</summary>
- <p>
-  書類作成・手入力にかかる時間を大幅に短縮できます<br><br>
-  スマホで書類を撮影し、AIが必要な情報を読み取ることで、これまで行っていた手入力や確認作業を減らせます<br><br>
-  手作業による入力・転記を減らすことで、入力ミスや確認作業の負担を抑え、残業削減にもつながります<br><br>
-  書類作成にかかる時間を短縮し、顧客対応や本来の業務に集中できる環境をつくります
- </p>
-</details>
-    <details><summary>顧客データや車両情報のセキュリティ対策は大丈夫ですか？</summary><p>お預かりする全てのデータや書類は、高いセキュリティ基準を満たしたクラウド環境で安全に暗号化・管理されています。<br>
-
-外部への漏洩リスクを防ぎ、法的な規制に準拠した運用を行っています</p></details>
   </div>
  </div>
 </section>
 
 <section class="cta" id="contact">
  <div class="container cta-box">
-  <div><div class="kicker" style="color:#8edcff">CONTACT</div><h2>まずは、今の作業を教えてください。</h2><p>「どこを効率化できるのか」を一緒に確認します。お気軽にご相談ください。</p></div>
   <div>
-   <a class="btn btn-red" href="tel:0928647755">TEL 080-8106-8283</a>
-   <p style="margin-top:10px;font-size:13px">担当：井手　</p>
+   <div class="kicker" style="color:#8edcff">CONTACT</div>
+   <h2>まずは、LINEでお気軽にご相談ください。</h2>
+   <p>「この作業も自動化できる？」「この書類にも使える？」など、具体的なご相談も大歓迎です。</p>
+   <div class="contact-topics">
+    <span>書類作成を効率化したい</span><span>入力・転記を減らしたい</span><span>実際の画面を見てみたい</span>
+   </div>
+  </div>
+  <div class="contact-actions">
+   <a class="btn btn-line" href="https://lin.ee/WVr2K2S" target="_blank" rel="noopener">LINEで無料相談する →</a>
+   <div class="contact-line"><strong>📱 LINEでのご相談がおすすめ</strong><p>スマホから気軽にメッセージを送れます。書類や画面を見ながらのご相談にも便利です。</p></div>
+   <a class="btn btn-primary" style="margin-top:10px" href="tel:08081068283">📞 電話で相談する　080-8106-8283</a>
+   <p class="contact-hours">担当：井手　｜　受付：平日 9:00〜18:00</p>
   </div>
  </div>
 </section>
@@ -261,5 +251,6 @@ OCR第1号様式(移転登録/変更登録)<br>
   <div class="small">© AI Auto Partners. All Rights Reserved.</div>
  </div>
 </footer>
+<a class="mobile-line-cta" href="https://lin.ee/WVr2K2S" target="_blank" rel="noopener"><span>LINE</span> LINEで無料相談する</a>
 </body>
 </html>
